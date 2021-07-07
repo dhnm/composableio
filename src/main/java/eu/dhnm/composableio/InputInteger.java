@@ -21,7 +21,7 @@ public class InputInteger extends Input<Integer> {
     /**
      * Custom validator and default error message
      * @param message instruction for user to input a value
-     * @param isValid custom validator
+     * @param isValid custom validator, return true if validation passed, or false to ask user again
      */
     public InputInteger(String message, Function<Integer, Boolean> isValid) {
         super(message, isValid);
@@ -38,7 +38,7 @@ public class InputInteger extends Input<Integer> {
 
     /**
      * @param message instruction for user to input a value
-     * @param isValid validator
+     * @param isValid validator, return true if validation passed, or false to ask user again
      * @param tryAgainPrompt prompt for user to try again upon encountering error
      */
     public InputInteger(String message, Function<Integer, Boolean> isValid, String tryAgainPrompt) {

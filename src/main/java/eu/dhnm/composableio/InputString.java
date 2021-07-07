@@ -20,7 +20,7 @@ public class InputString extends InputOptionalString {
     /**
      * Custom validator and default error message
      * @param message instruction for user to input a value
-     * @param isValid custom validator
+     * @param isValid custom validator, return true if validation passed, or false to ask user again
      */
     public InputString(String message, Function<String, Boolean> isValid) {
         super(message, isValid);
@@ -37,7 +37,7 @@ public class InputString extends InputOptionalString {
 
     /**
      * @param message instruction for user to input a value
-     * @param isValid validator
+     * @param isValid validator, return true if validation passed, or false to ask user again
      * @param tryAgainPrompt prompt for user to try again upon encountering error
      */
     public InputString(String message, Function<String, Boolean> isValid, String tryAgainPrompt) {
