@@ -44,7 +44,7 @@ this.choiceIdx = new InputInteger(
 Custom
 
 ```java
-Room rooms = // Array of Room objects
+Room[] rooms = // Array of Room objects
 
 ComposableIO[] roomItems = ComposableIO.toItems(rooms);
 Menu roomChoice = new Menu("Which room?", roomItems);
