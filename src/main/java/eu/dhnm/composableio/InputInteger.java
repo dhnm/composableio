@@ -29,11 +29,13 @@ public class InputInteger extends Input<Integer> {
 
         try {
             setValue(scanner.nextInt());
+            scanner.nextLine();
+        } catch(InputMismatchException e) {
+            scanner.nextLine();
+            throw new InputMismatchException("Wrong Input");
         } catch (NoSuchElementException e) {
             throw new InputMismatchException("Empty Input");
         }
-
-        scanner.nextLine();
 
         super.validationHook();
     }
