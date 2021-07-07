@@ -3,23 +3,45 @@ package eu.dhnm.composableio;
 import java.util.InputMismatchException;
 import java.util.function.Function;
 
+/**
+ * Extension of {@link Input} for {@link String} inputs with a default validator refusing empty inputs.
+ * To accept empty input as a valid answer, use {@link InputOptionalString}
+ * @author Dinh Huy Nhat Minh
+ */
 public class InputString extends InputOptionalString {
-
-
+    /**
+     * No validation and default error message
+     * @param message instruction for user to input a value
+     */
     public InputString(String message) {
         super(message);
     }
 
+    /**
+     * Custom validator and default error message
+     * @param message instruction for user to input a value
+     * @param isValid custom validator
+     */
     public InputString(String message, Function<String, Boolean> isValid) {
         super(message, isValid);
     }
 
-    public InputString(String message, String errorMessage) {
-        super(message, errorMessage);
+    /**
+     * No validation and custom error message
+     * @param message instruction for user to input a value
+     * @param tryAgainPrompt custom prompt for user to try again upon encountering error
+     */
+    public InputString(String message, String tryAgainPrompt) {
+        super(message, tryAgainPrompt);
     }
 
-    public InputString(String message, Function<String, Boolean> isValid, String errorMessage) {
-        super(message, isValid, errorMessage);
+    /**
+     * @param message instruction for user to input a value
+     * @param isValid validator
+     * @param tryAgainPrompt prompt for user to try again upon encountering error
+     */
+    public InputString(String message, Function<String, Boolean> isValid, String tryAgainPrompt) {
+        super(message, isValid, tryAgainPrompt);
     }
 
     @Override
